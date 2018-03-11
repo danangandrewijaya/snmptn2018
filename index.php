@@ -338,7 +338,7 @@
   function update_data(id, column_name, value)
   {
    $.ajax({
-    url:"update.php",
+    url:"libs/update.php",
     method:"POST",
     data:{id:id, column_name:column_name, value:value},
     success:function(data)

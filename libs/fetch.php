@@ -26,7 +26,7 @@ if($_POST["length"] != -1) {
  $query1 = 'LIMIT ' . ($_POST['start']) . ', ' . $_POST['length'];
 }
 
-$limit = "LIMIT 5000";
+$limit = "";
 $number_filter_row = mysqli_num_rows(mysqli_query($connect, $query . $limit));
 
 $result = mysqli_query($connect, $query . $query1);
