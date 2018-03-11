@@ -312,6 +312,7 @@
     <script src="assets/js/sb-admin-charts.min.js"></script>
     <script src="assets/js/jQueryRotate.js"></script>
     <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/input.js"></script>
     
     
 <script type="text/javascript" language="javascript" >
@@ -325,6 +326,7 @@
     "processing" : true,
     "serverSide" : true,
     "stateSave" : true,   
+    "pagingType": "input",   
     "order" : [],
     "ajax" : {
      url:"libs/fetch.php",
