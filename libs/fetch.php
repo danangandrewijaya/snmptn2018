@@ -31,20 +31,28 @@ $number_filter_row = mysqli_num_rows(mysqli_query($connect, $query . $limit));
 
 $result = mysqli_query($connect, $query . $query1);
 $dropdown = mysqli_query($connect, "SELECT * FROM jenjang_prestasi ORDER BY id_jenjang_prestasi");
+$dropdown2 = mysqli_query($connect, "SELECT * FROM jenjang_prestasi ORDER BY id_jenjang_prestasi");
 
 $str = '';
-while($we=mysqli_fetch_array($dropdown)){ $str .= '<option value="'.$we["id_jenjang_prestasi"].'">'.$we["nama"].' | '.$we["urutan"].'</option>'; }
+while($we=mysqli_fetch_array($dropdown , MYSQLI_NUM)){ $str .= '<option value="'.$we[0].'">'.$we[1].' | '.$we[2].'</option>'; }
+$str .= '';
+
+$strd = '';
+while($wed=mysqli_fetch_array($dropdown2 , MYSQLI_NUM)){ $strd .= '<option value='.$wed[0].'>'.$wed[1].' | '.$wed[2].'</option>'; }
+$strd .= '';
 
 
 $data = array();
 
 while($row = mysqli_fetch_array($result)) {
+$tes = '<select class=update data-id='.$row["id_prestasi"].' data-column=nilai_prestasi><option value=>Pilihan Prestasi</option>'.$strd.'</select>';    
+    
  $sub_array = array();
- $sub_array[] = '<div data-id="'.$row["id_prestasi"].'" data-column="id_prestasi">' . $row["id_prestasi"] . '</div>';
- $sub_array[] = '<div data-id="'.$row["id_prestasi"].'" data-column="siswa">' . $row["siswa"] .'<br/>'. $row["nama_siswa"] . '</div>';
- $sub_array[] = '<div data-id="'.$row["id_prestasi"].'" data-column="jenis_prestasi">' . $row["jenis_prestasi"] . '</div>';
- $sub_array[] = '<div data-id="'.$row["id_prestasi"].'" data-column="daftar_prestasi">' . $row["daftar_prestasi"] . '</div>';
- $sub_array[] = '<a data-id="'.$row["id_prestasi"].'" data-column="file_sertifikat" href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-lightbox="property"><img width="150px" src="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" alt="'.$row["file_sertifikat"].'"></a>';
+ $sub_array[] = '<div><a href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-toggle="lightbox" data-gallery="example-gallery" data-footer="'.$tes.'" >'.$row["id_prestasi"].'</a></div>';
+ $sub_array[] = '<div>' . $row["siswa"] .'<br/>'. $row["nama_siswa"] . '</div>';
+ $sub_array[] = '<div>' . $row["jenis_prestasi"] . '</div>';
+ $sub_array[] = '<div>' . $row["daftar_prestasi"] . '</div>';
+ $sub_array[] = '<a href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-lightbox="property">'.$row["file_sertifikat"].'</a>';
  $sub_array[] = (($row["flag_ver"]) ? '<div class="alert-success">' : '<div>' ). $row["nama_jenjang_prestasi"] .' - '. $row["urutan"] . '</div>
  <select class="update form-control" data-id="'.$row["id_prestasi"].'" data-column="nilai_prestasi"><option value="">Pilihan Prestasi</option>'.$str.'</select>';
  $data[] = $sub_array;

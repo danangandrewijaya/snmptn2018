@@ -18,6 +18,8 @@
   <link href="assets/css/sb-admin.css" rel="stylesheet">
   <!-- Lightbox-->
   <link href="assets/css/lightbox.css" rel="stylesheet">
+  <link href="assets/css/ekko-lightbox.css" rel="stylesheet">
+    
 </head>
 
 <body class="fixed-nav sticky-footer bg-light sidenav-toggled" id="page-top">
@@ -313,6 +315,7 @@
     <script src="assets/js/jQueryRotate.js"></script>
     <script src="assets/js/lightbox.js"></script>
     <script src="assets/js/input.js"></script>
+    <script src="assets/js/ekko-lightbox.js"></script>
     
     
 <script type="text/javascript" language="javascript" >
@@ -359,6 +362,11 @@
    var value = $(this).val();
    update_data(id, column_name, value);
   });
+     
+     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
   
  });
 </script>
