@@ -1,5 +1,6 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "snmptn-verifikasi");
+include "config.php";
+
 if(isset($_POST["id"]))
 {
  $value = mysqli_real_escape_string($connect, $_POST["value"]);

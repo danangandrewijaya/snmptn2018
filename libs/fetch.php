@@ -1,6 +1,6 @@
 <?php
-//fetch.php
-$connect = mysqli_connect("localhost", "root", "", "snmptn-verifikasi");
+include "config.php";
+
 $columns = array('id_prestasi', 'siswa', 'jenis_prestasi', 'daftar_prestasi', 'file_sertifikat', 'jenjang_prestasi');
 
 $query = "SELECT *, jenjang_prestasi.nama as nama_jenjang_prestasi FROM prestasi left join jenjang_prestasi on prestasi.nilai_prestasi = jenjang_prestasi.id_jenjang_prestasi ";
