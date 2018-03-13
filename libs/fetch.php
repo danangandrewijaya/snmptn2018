@@ -27,14 +27,15 @@ if($_POST["length"] != -1) {
  $query1 = 'LIMIT ' . ($_POST['start'] + $_SESSION['user_data']['start']) . ', ' . $_POST['length'];
 }
 
-if($_SESSION['user_data']['start'] > 0){
+if($_SESSION['user_data']['start'] > -1){
     $limit = " LIMIT ".($_SESSION['user_data']['end'] - $_SESSION['user_data']['start']);
 } else {
     $limit = "";
 }
-$number_filter_row = mysqli_num_rows(mysqli_query($connect, $query . $limit));
 
+$number_filter_row = mysqli_num_rows(mysqli_query($connect, $query . $limit));
 $result = mysqli_query($connect, $query . $query1);
+
 $dropdown = mysqli_query($connect, "SELECT * FROM jenjang_prestasi ORDER BY id_jenjang_prestasi");
 $dropdown2 = mysqli_query($connect, "SELECT * FROM jenjang_prestasi ORDER BY id_jenjang_prestasi");
 
