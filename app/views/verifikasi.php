@@ -1,6 +1,6 @@
 <?php
 (!isset($_SESSION))?session_start():"";
-if(!$core->getSession2('Login', 'isLogin')){
+if(!$core->getSession('isLogin')){
 	header("location:unauth.php?page=login");
 }
 ?>

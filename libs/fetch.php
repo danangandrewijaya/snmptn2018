@@ -1,4 +1,5 @@
 <?php
+(!isset($_SESSION))?session_start():"";
 include "config.php";
 
 $columns = array('id_prestasi', 'siswa', 'jenis_prestasi', 'daftar_prestasi', 'file_sertifikat', 'jenjang_prestasi');
@@ -23,10 +24,14 @@ if(isset($_POST["order"])) {
 $query1 = '';
 
 if($_POST["length"] != -1) {
- $query1 = 'LIMIT ' . ($_POST['start']) . ', ' . $_POST['length'];
+ $query1 = 'LIMIT ' . ($_POST['start'] + $_SESSION['user_data']['start']) . ', ' . $_POST['length'];
 }
 
-$limit = "";
+if($_SESSION['user_data']['start'] > 0){
+    $limit = " LIMIT ".($_SESSION['user_data']['end'] - $_SESSION['user_data']['start']);
+} else {
+    $limit = "";
+}
 $number_filter_row = mysqli_num_rows(mysqli_query($connect, $query . $limit));
 
 $result = mysqli_query($connect, $query . $query1);

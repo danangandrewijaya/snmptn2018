@@ -4,7 +4,7 @@
 //	error_reporting(0);
 	include('libs/Koneksi.php');
 	include('libs/User.php');				
-	include('libs/Core.php');					
+	require_once('libs/Core.php');					
 	$core = new Core;
 	
 ?>

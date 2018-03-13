@@ -3,8 +3,11 @@
 	if(isset($_POST['submit'])){
 		$user = new User;
 		if($user->validasiUser($_POST['nama'], md5($_POST['sandi']))){
-			$core->setSession('Login', 'username', $_POST['nama']);
-			$core->setSession('Login', 'isLogin', true);
+//			$core->setSession('Login', 'username', $_POST['nama']);
+//			$core->setSession('Login', 'isLogin', true);
+//			$tes = $user->select('start');
+//			$core->setSession('Login', 'start', $tes);
+            
             
 			header("location:index.php");
 		} else {

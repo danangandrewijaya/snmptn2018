@@ -5,6 +5,7 @@
 	include('libs/Core.php');					
 	include('libs/Koneksi.php');				
 	include('libs/User.php');				
+//	include('libs/fetch.php');				
 	$core = new Core;
 
     if(isset($_GET['page'])){
