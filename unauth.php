@@ -11,19 +11,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' href='assets/css/style.css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title><?php echo "SNMPTN 2018 - Universitas Diponegoro";?></title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="assets/css/sb-admin-2.css" rel="stylesheet"> 
+    <!-- Custom Fonts -->
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .form-error{
+          padding: 10px 10px;
+          color: #d44950;
+          text-align: center;
+          background-color: #f2dede; 
+    }
+    </style>
 </head>
 <body>
-	<div id="wrapper">
+<!--	<div id="wrapper">-->
+<!--
 		<div id="header">
 			<h1>SNMPTN 2018 - UNDIP</h1>
 		</div>
-		<nav>
-			<ul>
-				<li><a href="unauth.php">Home</a></li>
-				<li><a href="unauth.php?page=login">Login</a></li>
-			</ul>
-		</nav>
+-->
 		<div class="container">
 			<?php
 				if(isset($_GET['page'])){
@@ -34,13 +51,22 @@
 						include "app/errors/404.php";
 					}
 				} else {
-					echo "Selamat Datang";
+					include "app/unauths/login.php";
 				}
 			?>
 		</div>
+<!--
 		<footer>
 			copyright &copy; SNMPTN 2018 - UNDIP
 		</footer>
-	</div>
+-->
+<!--	</div>-->
+        <!-- jQuery -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+    <script src="assets/dist/js/sb-admin-2.js"></script>
 </body>
 </html>
