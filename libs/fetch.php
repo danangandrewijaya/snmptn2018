@@ -14,7 +14,7 @@ if(isset($_POST["search"]["value"])) {
  ';
 }
 
-if(isset($_POST["order"])) {
+if(isset($_POST["order"]) && $_SESSION['user_data']['usergroup'] == 'admin') {
  $query .= 'ORDER BY '.$columns[$_POST['order']['0']['column']].' '.$_POST['order']['0']['dir'].' 
  ';
 } else {
