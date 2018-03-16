@@ -6,7 +6,7 @@ $columns = array('id_prestasi', 'siswa', 'jenis_prestasi', 'daftar_prestasi', 'f
 
 $query = "SELECT *, jenjang_prestasi.nama as nama_jenjang_prestasi FROM prestasi left join jenjang_prestasi on prestasi.nilai_prestasi = jenjang_prestasi.id_jenjang_prestasi ";
 
-if(isset($_POST["search"]["value"])) {
+if(isset($_POST["search"]["value"]) && $_SESSION['user_data']['usergroup'] == 'admin') {
  $query .= '
  WHERE id_prestasi LIKE "%'.$_POST["search"]["value"].'%" 
  OR siswa LIKE "%'.$_POST["search"]["value"].'%" 
