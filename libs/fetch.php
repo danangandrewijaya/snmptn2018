@@ -58,7 +58,7 @@ $tes = '<select class=update data-id='.$row["id_prestasi"].' data-column=jenjang
  $sub_array[] = '<div>' . $row["siswa"] .'<br/>'. $row["nama_siswa"] . '</div>';
  $sub_array[] = '<div>' . $row["jenis_prestasi"] . '</div>';
  $sub_array[] = '<div>' . $row["daftar_prestasi"] . '</div>';
- $sub_array[] = '<a href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-lightbox="property">'.$row["file_sertifikat"].'</a>';
+ $sub_array[] = '<a href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-lightbox="property" data-title="'.$row["siswa"] .' '. $row["nama_siswa"].'<br/>'.$tes.'">'.$row["file_sertifikat"].'</a>';
  $sub_array[] = (($row["flag_ver"]) ? '<div class="alert-success">' : '<div>' ). $row["nama_jenjang_prestasi"] .' - '. $row["urutan"] . '</div>
  <select class="update form-control" data-id="'.$row["id_prestasi"].'" data-column="jenjang_prestasi"><option value="">Pilihan Prestasi</option>'.$str.'</select>';
  $data[] = $sub_array;

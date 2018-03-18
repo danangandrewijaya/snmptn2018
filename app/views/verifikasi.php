@@ -23,7 +23,7 @@ if(!$core->getSession('isLogin')){
   <!-- Custom styles for this template-->
   <link href="assets/css/sb-admin.css" rel="stylesheet">
   <!-- Lightbox-->
-  <link href="assets/css/lightbox.css" rel="stylesheet">
+  <link href="assets/vendor/lightbox/css/lightbox.css" rel="stylesheet">
   <link href="assets/css/ekko-lightbox.css" rel="stylesheet">
     
 </head>
@@ -319,7 +319,7 @@ if(!$core->getSession('isLogin')){
     <script src="assets/js/sb-admin-datatables.min.js"></script>
     <script src="assets/js/sb-admin-charts.min.js"></script>
     <script src="assets/js/jQueryRotate.js"></script>
-    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/vendor/lightbox/js/lightbox.js"></script>
     <script src="assets/js/input.js"></script>
     <script src="assets/js/ekko-lightbox.js"></script>
     
@@ -373,6 +373,27 @@ if(!$core->getSession('isLogin')){
             event.preventDefault();
             $(this).ekkoLightbox({wrapping: false});
         });
+   
+     var valrot = 0
+    $("img").rotate({
+      bind:
+      {
+        click: function(){
+          valrot +=90;
+          $(this).rotate({ animateTo:valrot})
+        }
+      }
+    });
+     
+    lightbox.option({
+      'positionFromTop': 10,
+//      'maxWidth': 2000,
+//      'maxHeight': 2000,
+      'imageFadeDuration': 400,
+      'resizeDuration': 400,
+      'showImageNumberLabel': false,
+      'fitImagesInViewport': false
+    })
   
  });
 </script>
