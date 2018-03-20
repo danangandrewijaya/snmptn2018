@@ -50,7 +50,7 @@ $strd .= '';
 
 $data = array();
 
-$no = 1;
+$no = 1 + $_POST['start'];
 while($row = mysqli_fetch_array($result)) {
 $tes = '<select class="update form-control" data-id='.$row["id_prestasi"].' data-column=jenjang_prestasi><option value=>Pilihan Prestasi</option>'.$strd.'</select>';    
     
