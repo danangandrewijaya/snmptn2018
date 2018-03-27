@@ -55,7 +55,7 @@ while($row = mysqli_fetch_array($result)) {
 $tes = '<select class="update form-control" data-id='.$row["id_prestasi"].' data-column=jenjang_prestasi><option value=>Pilihan Prestasi</option>'.$strd.'</select>';    
     
  $sub_array = array();
- $sub_array[] = '<div><a href="http://localhost/snmptn2018/data/'.$row["siswa"].'/Prestasi/'.$row["file_sertifikat"].'" data-toggle="lightbox" data-gallery="example-gallery" data-title="'.$row["siswa"].'" data-footer=\''.$tes.'\' >'.$no.'</a></div>';
+ $sub_array[] = '<div>'.$no.'</div>';
  $sub_array[] = '<div>' . $row["siswa"] .'<br/>'. $row["nama_siswa"] . '</div>';
  $sub_array[] = '<div>' . $row["jenis_prestasi"] . '</div>';
  $sub_array[] = '<div>' . $row["daftar_prestasi"] . '</div>';
