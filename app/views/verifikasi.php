@@ -24,7 +24,6 @@ if(!$core->getSession('isLogin')){
   <link href="assets/css/sb-admin.css" rel="stylesheet">
   <!-- Lightbox-->
   <link href="assets/vendor/lightbox/css/lightbox.css" rel="stylesheet">
-  <link href="assets/css/ekko-lightbox.css" rel="stylesheet">
     
 </head>
 
@@ -321,7 +320,6 @@ if(!$core->getSession('isLogin')){
     <script src="assets/js/jQueryRotate.js"></script>
     <script src="assets/vendor/lightbox/js/lightbox.js"></script>
     <script src="assets/js/input.js"></script>
-    <script src="assets/js/ekko-lightbox.js"></script>
     
     
 <script type="text/javascript" language="javascript" >
